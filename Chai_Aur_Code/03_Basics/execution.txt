@@ -1,0 +1,49 @@
+JavaScript Execution Context – How JS Works Behind the Scenes
+
+Let's look at an example so we can learn more:
+
+/*
+var n = 5;
+
+function square(n) {
+  var ans = n * n;
+  return ans;
+}
+
+var square1 = square(n);
+var square2 = square(8);  
+
+console.log(square1)
+console.log(square2)
+*/
+
+In the above code,
+
+1. n is initialized and assigned a value of 5
+2. We defined a function square() that accepts an argument n and returns the square of n.
+3. We call the square() function and store the returned value in the square1 variable.
+4. We call the square() function and store the returned value in the square2 variable.
+5. Finally, it outputs both square1 and square2
+
+Behind the scenes, JavaScript is doing so many things. Let's understand all of it.
+
+
+What is the Execution Context?
+
+When the JavaScript engine scans a script file, it makes an environment called the Execution Context that handles the entire transformation and execution of the code.
+
+During the context runtime, the parser parses the source code and allocates memory for the variables and functions. The source code is generated and gets executed.
+
+There are two types of execution contexts: global and function. The global execution context is created when a JavaScript script first starts to run, and it represents the global scope in JavaScript. A function execution context is created whenever a function is called, representing the function's local scope.
+
+
+
+Phases of the JavaScript Execution Context : =>
+
+There are two phases of JavaScript execution context:
+
+1. Creation phase: In this phase, the JavaScript engine creates the execution context and sets up the script's environment. It determines the values of variables and functions and sets up the scope chain for the execution context.
+
+2. Execution phase: In this phase, the JavaScript engine executes the code in the execution context. It processes any statements or expressions in the script and evaluates any function calls.
+
+Everything in JS happens inside this execution context. It is divided into two components. One is memory and the other is code. It is important to remember that these phases and components are applicable to both global and functional execution contexts.
