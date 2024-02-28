@@ -1,0 +1,214 @@
+<!DOCTYPE html><!--The html element represents the root of an HTML document.-->
+<html lang="en">
+<!--Helps define the language of an element: the language that non-editable elements are in, or the language that editable elements should be written in by the user. The attribute contains one “language tag” (made of hyphen-separated “language subtags”) in the format defined in Tags for Identifying Languages (BCP47). xml:lang has priority over it.-->
+
+<head><!--The head element represents a collection of metadata for the Document.-->
+    <meta charset="UTF-8"><!--This attribute defines the name of a piece of document-level metadata. It should not be set if one of the attributes itemprop, http-equiv or charset is also set.
+
+        This metadata name is associated with the value contained by the content attribute. The possible values for the name attribute are:
+        
+        application-name which defines the name of the application running in the web page.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This attribute contains the value for the http-equiv or name attribute, depending on which is used.-->
+    <title>Dom Learning</title>
+    <!--The title element represents the document's title or name. Authors should use titles that identify their documents even when they are used out of context, for example in a user's history or bookmarks, or in search results. The document's title is often different from its first heading, since the first heading does not have to stand alone when taken out of context.-->
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+        span{
+            display: none;
+        }
+    </style>
+</head>
+
+<body><!--The body element represents the content of the document.-->
+    <div class="black-box">
+        <h1 class="heading" id="title">Dom Learning with Chai aur Code <span>Dum Dum</span></h1>
+        <h1>Hello MrCS08</h1>
+        <h1>Hello pulton</h1>
+        <h2 class="heading" id="title">Hello Hello</h2>
+        <h2>Ram Ram</h2>
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, tempora?</p>
+        <input type="password" name="" id="pass">
+
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">four</li>
+        </ul>
+
+        <h3>This is H3</h3>
+    </div>
+   
+</body>  
+<script>
+    /******************  Imp for DOM   **************************/
+
+    console.log(window);
+    //value Elements and properties
+
+    console.log(document);
+    //value Elements and properties
+
+    console.log(document.links);
+    //provide link's and array values
+
+    console.log(document.links[2]);
+    //provide link's and array values
+
+    console.log(document.h1);
+    //target elements and tag's
+
+    //++++++++++++++++++ getElemetById ++++++++++++++++++++//
+
+    document.getElementById('firstHeading');
+    //target By Id
+
+    document.getElementById('firstHeading').innerHTML = "<h1>MrCS08</h1>";
+    //target id and Change the Value of Element's
+
+    document.getElementById('title');
+    //get value by id
+
+    <h1 class="heading" id="title" > Dom Learning with Chai aur Code </h1>
+
+    document.getElementById('title').id;
+    //title
+
+    document.getElementById('title').class;
+    //undefind 
+
+    document.getElementById('title').className;
+    //heading //because it's except class by classname only
+
+    document.getElementById('title').getAttribute;
+    //for get Attribute Value
+    //ƒ getAttribute() { [native code] } 
+
+    //when we want to get Attributes use getAttribute
+    document.getElementById('title').getAttribute();
+    //beacuse Attribute is a function
+
+    document.getElementById('title').getAttribute('id');//target id Attribute
+    //write inside string which Attribute we want to Target
+    //title
+
+    document.getElementById('title').getAttribute('class');//target class Attribute
+    //heading
+
+    //when we want to chnage value of Attribute use setAttribute
+    document.getElementById('title').setAttribute('class', 'headof');
+    //undefind =>  but value of Attribute has been  changed
+
+    //store in a variable 
+   const title = document.getElementById('title');
+    //title as a storing varibale and get a short value
+    
+    //for change the style 
+    title.style.color = "yellow";
+    //yellow heading text
+
+    title.style.padding = "15px";
+    //15px
+
+    title.style.borderRadius = '10px';
+    //10px
+    title.innerText; //for exect text which is we have to show visible text, it's sported only visible text
+    
+    title.textContent; //for only text content we use all text which is writed ,it's sported all text content
+
+    title.innerHTML; //for text content inside the target all tags and display:none values, it's sported tags text style id class all things
+
+    document.getElementsByClassName('heading'); //target by className
+
+    /*+++++++++++++++++++++++++ QuerySelector +++++++++++++++++++++*/
+
+    document.querySelector('h1'); //it's target first h1 and show it's value and content
+    document.querySelector('h2');
+    document.querySelector('#title');
+    document.querySelector('.heading');
+    document.querySelector('input[type="password"]');
+    document,querySelector('p:first-child');
+    document.querySelector('h1:nth-child(2)'); 
+    document.querySelector('ul');
+    const myul = document.querySelector('ul');
+    myul.querySelector('li');
+    const turnGreen = myul.querySelector('li');
+    turnGreen.style.backgroundColor = "green";
+    turnGreen.innerHTML = "hello";
+    turnGreen.style.padding = "15px";
+
+
+    /*++++++++++++++++++++++++ QuerySelectorAll +++++++++++++++++++++*/
+
+    document.querySelectorAll('h1'); //it's target all h1 and show value and content with other properties
+    document.querySelectorAll('h2');
+    document.querySelectorAll('#title');
+    document.querySelectorAll('.heading'); 
+    document.querySelectorAll('li');
+    document.querySelectorAll('h1');
+    document.querySelectorAll('h2');
+
+
+    //we Noticed when we use querySelectotAll we get NodeList that's seen like A Array but it's not Act like Array in all conditions
+    //so target li using querySelectorAll and get NodeList and Change it's styling 
+    document.querySelectorAll('li');
+    const myli = document.querySelectorAll('li');
+    myli.style.li.color = "yellow"; //but we get Error beacuse it is not Act like an Array
+    
+    myli[0].style.color = "yellow"; //so we have to defind which number of index we want change styling
+
+    //andit's working 
+
+    //now we terget h3 using querySelectorAll and Get NodeList and Chnage it's Styling
+    const myh3 = document.querySelectorAll('h3');//when we have only one h3 but we get only one in NodeList
+    myh3.style.color = "green"; //but again we get Error
+    myh3[0].style.color = "green";//and it's working
+
+    const harry = document.querySelectorAll('h1');
+    //undefind
+
+    harry // NodeList(3) [h1#title.heading, h1, h1]
+
+    harry[0].style.color = "green";
+    //green h1 first
+
+    harry[1].style.color = "yellow";
+    //yellow h1 second
+
+    harry[2].style.color = "blue";
+    //blue h1 third
+
+//++++++++++++++++++++++ Using Function as callBack function and forEach++++++++++++++++++++++++++//
+   
+const myli = document.querySelectorAll('li');//store in a variable and use querySelectorAll and get Nodelist of li
+
+     myli.forEach( function(lst) {  //use myli variable and then use forEach then write a CallBack Function
+        lst.style.color = "green"; //give them a style
+     });
+      //All li has been green
+
+//++++++++++++++++++ getElementByClassName  ++++++++++++++++++++++++//
+
+document.getElementsByClassName('list-item');//select or atrget Element by ClassName
+
+//we get HTMLCollection[]  so it is not an Array so we can't use Array properties
+//so we convert  HTMLCollection to Array from itemList variable
+Array.from(itemList); //now we have Array
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]//so we have All properties
+
+const convertedArray = Array.from(itemList);//store converted Array into Variable
+
+//so we use that variable and properties like forEach and callback function
+convertedArray.forEach( function (li) {
+console.log(li);
+});
+//then we get value of li
+
+
+</script>
+</html>
+

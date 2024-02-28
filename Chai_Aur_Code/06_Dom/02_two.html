@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Learning</title>
+    <style>
+        body{
+            background-color: #121212;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <!--Here our Comment-->
+        <div class="day">Monaday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednusday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+    
+</body>
+<script>
+
+    const parent = document.querySelector('.parent'); //target a parent Element and store in a varible
+   // console.log(parent);  //console.log parent we get all parent div
+   // console.log(parent.children); // console.log we get HTMLCollection like Array inside parent dic as a Children
+
+   // console.log(parent.children[1].innerHTML); //target index 1 varible 
+
+
+   for (let i = 0; i < parent.children.length; i++) {
+      //   console.log(parent.children[i].innerHTML); //we get all innerHTML value of parent.children[i]
+      };
+
+      parent.children[1].style.color = "yellow";//direct target elements
+     // console.log(parent.firstElementChild); //target First Element of the parent 
+     // console.log( parent.lastElementChild); //target last Element of the parent 
+
+      const dayOne = document.querySelector('.day');//target day and store in a variable
+      console.log(dayOne); 
+      console.log(dayOne.parentElement);  //here we able to have get parent variable 
+      console.log(dayOne.nextElementSibling); //here we able to get Sibling of targeted Element
+
+      console.log("NODES : ", parent.childNodes);//get a nodeList 
+      /*NodeList(15) [text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text]*/
+      //we know that we have only 7 elements but we get NodeList of 15 elements so here we noticed that the js nodeList is Included line bracks and count it only single time 
+     //but when we add a comment it's also count a comment's and it's line bracks now we get 
+     /*NodeList(17) [text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text]*/
+
+  </script>
+</html>

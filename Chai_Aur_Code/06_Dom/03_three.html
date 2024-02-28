@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | with CS</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+    
+</body>
+<script>
+    const div = document.createElement('div'); //using createElememt we have to create it by js
+    div.className = "main";
+    //div.id = "A"; //Normal ID
+    div.id = Math.round(Math.random() * 10 + 1); //we Math.random for give random value for id , multiply by 10 for not decimal value, +1 for not Zero Value and Math.round for one single value pure digit
+    console.log(div);
+
+    div.setAttribute("title", "it is a title");//for custom elements title
+    div.style.backgroundColor = "yellow";
+    div.style.color = "blue";
+    div.style.padding = "12px";
+
+    //div.innerHTML = "MrCS08";//add text in div but still we don't see one word on webpage
+    
+    const addText = document.createTextNode("MrCS08");//store a variable and  create Node Using createTextNode inside div
+    div.appendChild(addText);//give a variable valur to div using appendChild
+
+    document.body.appendChild(div);//give to the body for a appendChild and value of div
+
+
+
+</script>
+</html>
