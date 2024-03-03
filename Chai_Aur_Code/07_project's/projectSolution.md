@@ -43,3 +43,33 @@ buttons.forEach(function (button) {
   });
 });
 ``````
+## Project_02
+
+``````console.log("MrCSGhosh");
+
+const form = document.querySelector('form');
+
+//this use case gives you empty value because we use event so we want value with event
+//const height = parseInt(document.querySelector('#height').value);
+
+
+form.addEventListener('submit', function (e) {  //even is submit 
+
+    e.preventDefault() //for holding a value of form
+
+
+   const heights = parseInt(document.querySelector('#height').value);
+   const weights = parseInt(document.querySelector('#weight').value);
+   const results = document.querySelector('#result');
+
+   if (heights === '' || heights < 0 || isNaN(heights)) {
+       results.innerHTML = `Please Give a Valid Height ${heights}`;
+   }  else if (weights === '' || weights < 0 || isNaN(weights)) {
+       results.innerHTML = `Please Give a Valid Weights ${weights}`;
+   }  else {
+      const bmi = (weights/((heights*heights)/10000)).toFixed(2);
+      results.innerHTML = `<span>${bmi}</span>`;
+   }
+
+});
+``````
