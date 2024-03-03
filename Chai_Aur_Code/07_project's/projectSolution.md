@@ -73,3 +73,30 @@ form.addEventListener('submit', function (e) {  //even is submit
 
 });
 ``````
+## project_03
+
+``````
+console.log('MrCSGhosh');
+
+const clock = document.getElementById('clock');
+// const clock = document.querySelector('#clock')
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+//
+console.log('MrCSGhosh');
+
+const clock = document.getElementById('clock');
+
+setInterval(function () {
+  let date = new Date();
+  let options = { hour12: true };
+  clock.innerHTML = date.toLocaleTimeString([], options);
+}, 1000);
+
+``````
+
