@@ -205,3 +205,28 @@ function startGame (){
     });
 };
 ``````
+## project 05
+
+``````
+//alert("hi");
+console.log('MrCSGhosh');
+
+const colorClass = document.querySelector('#insert');
+
+window.addEventListener('keydown', function (e) {
+  colorClass.innerHTML = `<div class="color">
+    <table>
+    <tr>
+    <td>Key</td>
+    <td>KeyCode</td>
+    <td>Code</td>
+    </tr>
+    <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td> 
+      <td>${e.code}</td>
+    </tr>
+    </table>
+    </div>`;
+});
+``````
