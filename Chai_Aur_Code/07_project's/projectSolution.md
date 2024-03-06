@@ -230,3 +230,32 @@ window.addEventListener('keydown', function (e) {
     </div>`;
 });
 ``````
+
+## Project 06
+
+``````
+console.log('Mr CS Ghosh');
+
+function chnageBgColor() {
+  let hexCode = '0123456789ABCDEF';
+  //console.log(hexCode(( + 1)));
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hexCode[Math.floor(Math.random() * 16)];
+  }
+  const body = document.querySelector('body');
+  body.style.backgroundColor = color;
+}
+//chnageBgColor();
+
+//start button
+document.querySelector('#start').addEventListener('click', function () {
+  console.log('Start');
+  let bgChnaged = setInterval(chnageBgColor, 1000);
+  //stop button
+  document.querySelector('#stop').addEventListener('click', function () {
+    console.log('Stop');
+    clearInterval(bgChnaged);
+  });
+});
+``````
