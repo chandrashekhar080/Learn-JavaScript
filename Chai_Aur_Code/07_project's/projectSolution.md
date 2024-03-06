@@ -234,28 +234,34 @@ window.addEventListener('keydown', function (e) {
 ## Project 06
 
 ``````
-console.log('Mr CS Ghosh');
+console.log("Mr CS Ghosh");
 
 function chnageBgColor() {
-  let hexCode = '0123456789ABCDEF';
+  let hexCode = "0123456789ABCDEF";
   //console.log(hexCode(( + 1)));
-  let color = '#';
+  let color = "#";
   for (let i = 0; i < 6; i++) {
     color += hexCode[Math.floor(Math.random() * 16)];
   }
-  const body = document.querySelector('body');
-  body.style.backgroundColor = color;
+  //console.log(color);
+ return color;
 }
+let bgChnaged;
 //chnageBgColor();
+const start = function(){
+   if (!bgChnaged) {
+    bgChnaged = setInterval(changged, 1000);
 
-//start button
-document.querySelector('#start').addEventListener('click', function () {
-  console.log('Start');
-  let bgChnaged = setInterval(chnageBgColor, 1000);
-  //stop button
-  document.querySelector('#stop').addEventListener('click', function () {
-    console.log('Stop');
-    clearInterval(bgChnaged);
-  });
-});
+   }
+    function changged(){
+      //  const body = document.querySelector("body");
+       document.body.style.backgroundColor = chnageBgColor();
+    };
+};
+function stop(){
+     clearInterval(bgChnaged);
+     bgChnaged = null;
+};
+document.querySelector("#start").addEventListener("click", start);
+document.querySelector("#stop").addEventListener("click", stop);
 ``````
